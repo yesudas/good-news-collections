@@ -13,7 +13,7 @@ if (isset($_GET['d'])) {
 <?php include 'menu.php'; ?>
 <?php include 'bgsound.php'; ?>
 
-<iframe src="https://christianpdf.com/?dir=./02-Books-by-Category-வகை-வாரியாக/05-Bible-College-Notes-and-Books/01-Good-News-Bible-Study-Collection&embed=1" style="width:100%; height:90vh; border:none;">
+<iframe src="https://christianpdf.com/index.php?path=Tamil-Christian-Books/08-Bible-College-Notes-and-Books/01-Good-News-Bible-Study-Collection&embed=1" style="width:100%; height:90vh; border:none;">
     Your browser doesn't support iframes
 </iframe>
 
