@@ -1,34 +1,65 @@
-# good-news-collections
-Good News Collections - Tamil Christian Collections
+# Good News Collections
 
-## Running in the Website
-https://www.wordofgod.in/good-news-collections/
+நற்செய்தி தொகுப்புகள் — free Tamil Christian Bible study collections by Good News Publishers, hosted by Word of God Team.
 
-## Published By: 
+**Live site:** https://www.wordofgod.in/good-news-collections/
+
+## What’s included
+
+- Interlayer & interlinear Tamil Bibles
+- Bible dictionaries and Strong’s references
+- Commentaries, concordance, and study aids
+- Life of Jesus collections (ministry, teachings, parables, passion, and more)
+- Paul’s missionary journeys and epistles
+- PDF download library (`download.php`)
+- Installable PWA (manifest + service worker)
+
+## Local preview
+
+Requires PHP (for `index.php` visitor counter and download pages):
+
+```bash
+php -S 127.0.0.1:8765 -t .
+```
+
+Open http://127.0.0.1:8765/
+
+## Project layout
+
+| Path | Purpose |
+|------|---------|
+| `index.php` | Home hub — categorized collection links |
+| `download.php` | Embedded PDF library |
+| `header.php` / `menu.php` / `footer.php` | Shared page chrome |
+| `counter.php` | Visitor counter |
+| `credits.php` | Publisher / about content |
+| `css/styles.css` | Open-ministry design system |
+| `js/script.js` | Nav toggle, PWA install, zoom helpers |
+| `manifest.json` / `sw.js` | Progressive Web App |
+
+## Published by
+
 Tamil Good News Publishers and Bell Wether International, நற்செய்திப் பதிப்பகம்
 
-## Hosted as Website By: 
-Word of God Team, www.WordOfGod.in
+## Hosted by
 
-## Copyright: 
-Public Domain, as per Matthew 10:8 - "Freely you have received, freely give"
+Word of God Team — [www.WordOfGod.in](https://www.WordOfGod.in)
 
-## Original Author/Publisher Details: 
+## Copyright
 
-This hard work of creating these exhaustive collections for the Tamil Christian World is done by honorable Arulappan.
-Originally printed at their own press at Srivilliputtur, Tamilnadu, India.
-Later the next generation, that is, his sons created the PDF versions and Android versions of these books and made it public domain at free of cost based on Matthew 10:8. May God bless their generations!
+Public Domain, as per Matthew 10:8 — “Freely you have received, freely give.”
 
-Word of God Team, www.WordOfGod.in took the next hard milestone of collecting these PDFs, which was almost in unavailable state in the internet and then they invested huge money & time to bring this up as free website.
-This is due to hard work of many team members from Word of God Team. We are honored by God by giving us this wonderful opportunity.
-With the Grace of God we were able to make it available to Tamil Christian World once again! Glory to God Alone!!
+## Original author / publisher
 
-Good News Publishers address is 220-A, Kolurpatti Street, Srivilliputtur Zip/Pincode: 626125 Tamil Nadu, India. (address is not active, no one is responding).
-E-mail: arulappanindia@gmail.com (email is not active, no one is responding).
-WhatsApp Mobile: +91 9443214095.
+These exhaustive Tamil Christian collections were created by honorable Arulappan and originally printed at their press in Srivilliputtur, Tamil Nadu, India. The next generation prepared PDF and Android editions and released them as public domain, freely given based on Matthew 10:8.
 
-## Contact Us: 
+Word of God Team recovered these works when they were nearly unavailable online and rebuilt them as a free website for the Tamil Christian world. Glory to God alone!
 
-Email: wordofgod@wordofgod.in
+**Good News Publishers address:** 220-A, Kolurpatti Street, Srivilliputtur Zip/Pincode: 626125 Tamil Nadu, India. (address is not active, no one is responding)  
+**E-mail:** arulappanindia@gmail.com (email is not active, no one is responding)  
+**WhatsApp:** +91 9443214095
 
-WhatsApp: +91 7676 50 5599
+## Contact
+
+- **Email:** wordofgod@wordofgod.in  
+- **WhatsApp:** +91 7676 50 5599

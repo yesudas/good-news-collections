@@ -1,41 +1,70 @@
 if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/good-news-collections/sw.js')
-        .then(() => console.log("Service Worker Registered"))
-        .catch(err => console.log("Service Worker Failed:", err));
+  navigator.serviceWorker
+    .register('/good-news-collections/sw.js')
+    .then(() => console.log('Service Worker Registered'))
+    .catch((err) => console.log('Service Worker Failed:', err));
 }
-        
-document.addEventListener("DOMContentLoaded", () => {
-  const installAppBtn = document.getElementById("installAppBtn");
+
+document.addEventListener('DOMContentLoaded', () => {
+  const installAppBtn = document.getElementById('installAppBtn');
+  const navToggle = document.querySelector('[data-nav-toggle]');
+  const siteNav = document.querySelector('[data-site-nav]');
   let deferredPrompt;
 
-  window.addEventListener("beforeinstallprompt", (e) => {
+  if (navToggle && siteNav) {
+    navToggle.addEventListener('click', () => {
+      const open = siteNav.classList.toggle('is-open');
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+
+  window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault();
     deferredPrompt = e;
-    
+
     try {
-        const urlParams = new URLSearchParams(window.location.search);
-        // We check if the 'f' parameter is NOT 'app'.
-        if (urlParams.get('f') !== 'app') {
-            // If it's not the app, we find the button and make it visible.
-            //const installAppBtn = document.getElementById('installAppBtn');
-            if (installAppBtn) {
-                // By setting display to an empty string, it reverts to the CSS default (in this case, 'block' or 'inline-block').
-                installAppBtn.style.display = "inline";
-            }
-        }
-    } catch (e) {
-        // Log any errors for debugging.
-        console.error("Error managing install button visibility:", e);
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('f') !== 'app' && installAppBtn) {
+        installAppBtn.classList.add('is-visible');
+      }
+    } catch (err) {
+      console.error('Error managing install button visibility:', err);
     }
-    
   });
 
-  installAppBtn.addEventListener("click", async () => {
-    if (deferredPrompt) {
-      deferredPrompt.prompt();
-      const choice = await deferredPrompt.userChoice;
-      console.log("User choice:", choice.outcome);
-      deferredPrompt = null;
-    }
-  });
+  if (installAppBtn) {
+    installAppBtn.addEventListener('click', async () => {
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        const choice = await deferredPrompt.userChoice;
+        console.log('User choice:', choice.outcome);
+        deferredPrompt = null;
+        installAppBtn.classList.remove('is-visible');
+      }
+    });
+  }
 });
+
+let currentZoom = 1;
+
+function zoomIn() {
+  currentZoom += 0.1;
+  applyZoom();
+}
+
+function zoomOut() {
+  currentZoom = Math.max(0.5, currentZoom - 0.1);
+  applyZoom();
+}
+
+function resetZoom() {
+  currentZoom = 1;
+  applyZoom();
+}
+
+function applyZoom() {
+  const container = document.getElementById('container') || document.querySelector('.container');
+  if (container) {
+    container.style.zoom = currentZoom;
+  }
+}
