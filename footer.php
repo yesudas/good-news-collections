@@ -22,6 +22,7 @@ include 'counter.php';
             <a href="https://wordofgod.in/bible-app-modules/" target="_blank" rel="noopener">Bible App Modules</a>
             <a href="https://wordofgod.in/wog/word-of-god-வெளியீடுகள்-download-all-our-published-materials-free-of-cost/" target="_blank" rel="noopener">All Our Resources</a>
             <a href="https://wordofgod.in/" target="_blank" rel="noopener">Free Christian Resources</a>
+            <a href="https://www.wordofgodteam.com/" target="_blank" rel="noopener">About Us</a>
         </p>
     </footer>
 
